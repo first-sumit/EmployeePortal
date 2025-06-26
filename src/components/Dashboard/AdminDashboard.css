@@ -1,0 +1,137 @@
+/* src/components/Dashboard/AdminDashboard.css */
+
+/* layout & header */
+.dashboard-container{padding:24px;background:#F5F5F7;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+.top-row{display:flex;align-items:center;justify-content:space-between}
+.segmented-control{display:inline-flex;background:#EBEBF0;border-radius:8px;overflow:hidden}
+.seg-btn{padding:8px 16px;border:none;background:none;cursor:pointer;color:#6E6E73;font-weight:500}
+.seg-btn.active{background:#FFF;color:#007AFF}
+.seg-btn:not(.active):hover{background:rgba(0,0,0,.06)}
+.btn-add{background:#007AFF;color:#FFF;border:none;border-radius:8px;padding:8px 16px;font-size:14px;cursor:pointer}
+.sub-info{text-align:center;margin:8px 0 16px 0;color:#6E6E73;font-size:14px}
+
+/* table */
+.table-container{background:#FFF;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+.apple-table{width:100%;border-collapse:collapse}
+.apple-table thead{background:#F2F2F7}
+.apple-table th{text-align:left;padding:12px;font-size:14px;color:#6E6E73}
+.apple-table td{padding:12px;font-size:15px;color:#1C1C1E;border-top:1px solid #E1E8F0}
+.apple-table tr:hover{background:#FAFAFA;cursor:pointer}
+
+/* status */
+.status{display:inline-block;padding:4px 8px;border-radius:999px;font-size:12px;font-weight:500}
+.status.accepted{background:rgba(52,199,89,.12);color:#34C759}
+.status.rejected{background:rgba(255,59,48,.12);color:#FF3B30}
+.status.pending{background:rgba(255,149,0,.12);color:#FF9500}
+
+/* modal */
+.modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.4);display:flex;align-items:center;justify-content:center;z-index:1000}
+.modal-backdrop.delete-confirm{z-index:1200}
+.modal-box{position:relative;background:#FFF;border-radius:12px;padding:24px;width:90%;max-width:500px;max-height:90vh;overflow-y:auto;box-shadow:0 4px 16px rgba(0,0,0,.2)}
+.modal-box.wide{max-width:800px}
+.modal-close-icon{position:absolute;top:12px;right:12px;background:none;border:none;cursor:pointer}
+
+/* add modal */
+.modal-content-split{display:flex;gap:24px;margin-top:16px}
+.add-section{flex:1;display:flex;flex-direction:column;gap:12px}
+.add-section input,.add-section select{padding:8px;border:1px solid #D1D1D6;border-radius:6px}
+.btn.btn-primary{background:#007AFF;color:#FFF;border:none;border-radius:8px;padding:8px 16px;font-size:14px;cursor:pointer}
+.btn.btn-primary:disabled{background:rgba(142,142,147,.12);color:#8E8E93;cursor:not-allowed}
+.file-drop-area{flex:1;border:2px dashed #C7C7CC;border-radius:8px;display:flex;align-items:center;justify-content:center;text-align:center;padding:16px;color:#6E6E73;cursor:pointer;white-space:pre-line;position:relative;transition:.2s}
+.file-drop-area.drag{border-color:#007AFF;background:rgba(0,122,255,.06)}
+.selected-file{display:flex;align-items:center;gap:8px}
+.remove-file{background:none;border:none;cursor:pointer;padding:0}
+
+/* message */
+.error-text{color:#FF3B30;margin:4px 0;font-size:14px}
+.info-msg{color:#007AFF;margin:4px 0;font-size:14px}
+
+/* user modal */
+.req-details{line-height:1.4;font-size:14px;color:#1C1C1E;margin-top:12px}
+.detail-row{display:flex;align-items:center;margin-bottom:12px}
+.detail-label{width:100px;font-size:14px;color:#6E6E73}
+.detail-input{flex:1;padding:8px;border:1px solid #D1D1D6;border-radius:6px;font-size:15px}
+.modal-footer{display:flex;justify-content:flex-end;gap:12px;margin-top:24px}
+.modal-footer.between{justify-content:space-between}
+.btn-outline{background:none;border:1px solid #6E6E73;color:#6E6E73;padding:6px 12px;border-radius:6px;cursor:pointer}
+.btn-save{background:#007AFF;color:#FFF;border:none;border-radius:8px;padding:8px 16px;font-size:14px;cursor:pointer}
+.btn-save:disabled{background:#E1E1E5;color:#8E8E93;cursor:not-allowed}
+.delete-user-btn{background:rgba(255,59,48,.12);color:#FF3B30;border:none;border-radius:8px;padding:8px 16px;font-size:14px;cursor:pointer}
+.edit-btn-icon{background:none;border:none;color:#007AFF;font-size:14px;cursor:pointer;display:flex;align-items:center}
+.cancel-btn{background:none;border:none;color:#007AFF;font-size:14px;cursor:pointer}
+
+/* doc list */
+.doc-btn{background:#007AFF;color:#FFF;border:none;border-radius:6px;padding:6px 12px;font-size:14px;cursor:pointer}
+.doc-list{list-style:none;padding:0}
+.doc-list li{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+
+/* preserve whitespace */
+.preformatted{white-space:pre-wrap}
+
+/* field blocks with title + value */
+.detail-block { margin-bottom:16px }
+.detail-label { display:block; font-size:13px; font-weight:600; color:#6E6E73; letter-spacing:.2px; margin-bottom:2px }
+.detail-value { font-size:15px; color:#1C1C1E; white-space:pre-wrap }
+.preformatted { white-space:pre-wrap }
+.modal-footer.between{ justify-content:space-between }
+.edit-btn-icon svg path { fill:#007AFF }
+
+/* ─── Resume & Additional Documents Styles ─── */
+/* Resume & Additional Docs sections */
+.detail-section {
+  margin-top: 24px;
+}
+.detail-section-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #6E6E73;
+  letter-spacing: .2px;
+  margin-bottom: 8px;
+}
+.file-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #F2F2F7;
+  border-radius: 8px;
+  padding: 8px 12px;
+  margin-bottom: 8px;
+}
+.file-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.file-name {
+  font-size: 15px;
+  color: #1C1C1E;
+}
+.btn-view {
+  background: #007AFF;            /* filled blue */
+  color: #FFFFFF;                 /* white text */
+  border: none;
+  border-radius: 6px;
+  padding: 6px 16px;
+  font-size: 14px;
+  cursor: pointer;
+}
+.btn-view:hover {
+  filter: brightness(0.95);
+}
+
+/* generic detail blocks */
+.detail-block { margin-bottom: 16px; }
+.detail-label  {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #6E6E73;
+  margin-bottom: 2px;
+}
+.detail-value  {
+  font-size: 15px;
+  color: #1C1C1E;
+  white-space: pre-wrap;
+}
+.preformatted { white-space: pre-wrap; }

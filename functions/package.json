@@ -1,0 +1,14 @@
+{
+  "name": "functions",
+  "engines": {
+    "node": "20"
+  },
+  "dependencies": {
+    "firebase-admin": "^11.10.1",
+    "firebase-functions": "^6.3.2",
+    "nodemailer": "^6.9.4"
+  },
+  "devDependencies": {
+    "react-scripts": "^5.0.1"
+  }
+}
